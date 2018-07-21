@@ -9,6 +9,6 @@ dependencies {
 }
 ```
 
-# DpUtils
+### DpUtils
 Helping class to work with dp and px.
 
