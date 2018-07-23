@@ -1,3 +1,9 @@
 <resources>
 	<string name="app_name">Android Utils Sample</string>
+
+	<string name="show_toast_dark_long">Show dark long toast</string>
+	<string name="show_toast_light_short">Show light short toast</string>
+	<string name="show_toast_with_drawable">Show toast with drawable</string>
+
+	<string name="toast_test_text">It\'s a very very very long toast to fit a very very very long text</string>
 </resources>
