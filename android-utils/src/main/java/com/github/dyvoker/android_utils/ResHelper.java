@@ -27,13 +27,12 @@ public class ResHelper {
 
 	/**
 	 * @param colorId Id of the color.
-	 * @param theme Theme, optional parameter.
 	 * @return The found color. If not found throws {@link Resources.NotFoundException}.
 	 */
 	@ColorInt
-	public int getColor(@ColorRes int colorId, @Nullable Resources.Theme theme) {
+	public int getColor(@ColorRes int colorId) {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-			return appContext.getResources().getColor(colorId, theme);
+			return appContext.getColor(colorId);
 		} else {
 			//noinspection deprecation
 			return appContext.getResources().getColor(colorId);
@@ -54,9 +53,15 @@ public class ResHelper {
 	 * @return The found drawable. If not found throws {@link Resources.NotFoundException}.
 	 */
 	@NonNull
-	public Drawable getDrawable(@DrawableRes int drawableId, @Nullable Resources.Theme theme) {
+	public Drawable getDrawable(@DrawableRes int drawableId) {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			return appContext.getResources().getDrawable(drawableId, theme);
+			Drawable drawable = appContext.getDrawable(drawableId);
+			if (drawable == null) {
+				throw new Resources.NotFoundException(
+					"Drawable with resource ID #0x" + Integer.toHexString(drawableId)
+				);
+			}
+			return drawable;
 		} else {
 			//noinspection deprecation
 			return appContext.getResources().getDrawable(drawableId);
