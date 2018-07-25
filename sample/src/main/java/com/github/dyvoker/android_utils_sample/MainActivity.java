@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 
 		TextView button1 = findViewById(R.id.textView);
-		button1.setBackgroundColor(App.resHelper().getColor(R.color.buttonBackground));
 		button1.setText(App.resHelper().getString(R.string.show_toast_dark_long));
 		button1.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 		});
 
 		TextView button2 = findViewById(R.id.textView2);
-		button2.setBackgroundColor(App.resHelper().getColor(R.color.buttonBackground));
 		button2.setText(App.resHelper().getString(R.string.show_toast_light_short));
 		button2.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -40,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
 		});
 
 		TextView button3 = findViewById(R.id.textView3);
-		button3.setBackgroundColor(App.resHelper().getColor(R.color.buttonBackground));
 		button3.setText(App.resHelper().getString(R.string.show_toast_with_drawable));
 		button3.setOnClickListener(new View.OnClickListener() {
 			@Override
