@@ -5,13 +5,13 @@
 Add dependency:
 ```gradle
 dependencies {
-    implementation 'com.github.dyvoker:android-utils:0.1'
+    implementation 'com.github.dyvoker:android-utils:0.1.0'
 }
 ```
 
 ## App singleton
 Some helpfull classes using application context.
-So I recommend use App singleton:
+So I recommend to use App singleton:
 ```java
 public class App extends Application {
 
@@ -60,10 +60,9 @@ And add in AndroidManifest.xml of your project:
 ```
 
 ## Utils classes
-### DpUtils
-Helping class to work with dp and px.
 
 ### Toaster
+Helping class to show Toasts.
 Simple:
 ```java
 App.toaster().showToast(App.resHelper().getString(R.string.toast_test_text), Toaster.LONG);
@@ -79,4 +78,16 @@ App.toaster().showToast(
     icon
 );
 ```
+
+### DpUtils
+Helping class to work with dp and px.
+
+### ColorUtils
+Helping class for working with colors.
+
+### LayoutUtils
+Helping class for work with layouts.
+
+### ResHelper
+Helping class to work with Resources.
 
