@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -51,6 +52,19 @@ public class Toaster {
 	}
 
 	/**
+	 * Show {@link Toast} with dark theme.
+	 *
+	 * @param stringId Id of the string resource.
+	 * @param duration Duration of the Toast.
+	 */
+	public void showToast(
+		@StringRes int stringId,
+		int duration
+	) {
+		showToast(stringId, duration, DARK_TOAST);
+	}
+
+	/**
 	 * Show {@link Toast}. Color of text will be black or white,
 	 * it depends on brightness of the backgroundColor.
 	 *
@@ -63,6 +77,24 @@ public class Toaster {
 		int duration,
 		@ColorInt int backgroundColor
 	) {
+		int textColor = ColorUtils.getDiscreteContrastColor(backgroundColor);
+		showCustomToast(text, duration, backgroundColor, textColor, null);
+	}
+
+	/**
+	 * Show {@link Toast}. Color of text will be black or white,
+	 * it depends on brightness of the backgroundColor.
+	 *
+	 * @param stringId Id of the string resource.
+	 * @param duration Duration of the Toast.
+	 * @param backgroundColor Color of the background.
+	 */
+	public void showToast(
+		@StringRes int stringId,
+		int duration,
+		@ColorInt int backgroundColor
+	) {
+		String text = appContext.getString(stringId);
 		int textColor = ColorUtils.getDiscreteContrastColor(backgroundColor);
 		showCustomToast(text, duration, backgroundColor, textColor, null);
 	}
