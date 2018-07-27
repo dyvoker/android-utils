@@ -5,7 +5,7 @@ apply plugin: 'com.jfrog.bintray'
 ext {
 	publishedGroupId = 'com.github.dyvoker'
 	artifact = 'android-utils'
-	libraryVersion = '0.4'
+	libraryVersion = '0.1.0'
 
 	libraryName = 'Android Utils'
 	libraryDescription = 'Utils for Android.'
@@ -31,7 +31,7 @@ android {
 	defaultConfig {
 		minSdkVersion 14
 		targetSdkVersion 27
-		versionCode 4
+		versionCode 5
 		versionName libraryVersion
 	}
 	buildTypes {
@@ -39,6 +39,8 @@ android {
 			minifyEnabled false
 		}
 	}
+
+	resourcePrefix 'andr_ut_'
 }
 
 dependencies {

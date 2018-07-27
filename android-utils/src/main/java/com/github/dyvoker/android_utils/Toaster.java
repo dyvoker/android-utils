@@ -102,7 +102,7 @@ public class Toaster {
 		@Nullable Drawable icon
 	) {
 		LayoutInflater inflater = LayoutInflater.from(appContext);
-		View layout = inflater.inflate(R.layout.custom_toast, null);
+		View layout = inflater.inflate(R.layout.andr_ut_custom_toast, null);
 
 		// Set rounded rectangle background.
 		LinearLayout container = layout.findViewById(R.id.toast_container);
